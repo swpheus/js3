@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>img.html</title>
+    <style>
+    body{text-align: center;}
+    img{display: block; margin: 50px auto 20px}
+    </style>
+    <script src="common/jquery-3.2.1.min.js"></script>
+    <script>
+    $(function(){
+       $('.img').click(function(){
+         console.log($(this).parent().children('img').attr('src'));
+         console.log($(this).prev().attr('alt'));
+         console.log($(this).prev().attr('class'));
+         var arry=[1,2,3,4,5,6];
+         var name ,add;
+         for(i=1; i<7; i++){
+           num=Math.random(); //0~1 사이에 무수한 실수를 추출
+           num=Math.floor(num*6);//0~15 숫자를 만듬
+           name+=arry[num];
+         }
+         var src=$(this).prev().attr('src', "images/kid02.jpg");
+       });
+    });
+
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+        <h2>태그 속성값 접근</h2>
+        <img src="images/kid01.jpg" alt="대한민국만세" />
+        <button type="button" class="img">이미지변경</button>
+    </div>
+  </body>
+</html>
